@@ -5,7 +5,7 @@
       <mat-form-field>
         <mat-label>Nome</mat-label>
         <input matInput [(ngModel)]="nome" name="nome">
-      </mat-form-field>   
+      </mat-form-field>
     </p>
     <p>
       <mat-form-field>
@@ -25,30 +25,39 @@
         <mat-label>Número</mat-label>
         <input matInput [(ngModel)]="numero" name="numero">
       </mat-form-field>
-    
+
       <mat-form-field class="complemento">
         <mat-label>Complemento</mat-label>
         <input matInput [(ngModel)]="complemento" name="complemento">
       </mat-form-field>
     </p>
 
-    <p>
+    <mat-radio-group [(ngModel)]="selectedOption">
+      <mat-radio-button value="option1">Opção 1</mat-radio-button>
+      <mat-radio-button value="option2">Opção 2</mat-radio-button>
+    </mat-radio-group>
+
+    <div *ngIf="selectedOption === 'option1'">
+      <p>Conteúdo da Opção 1</p>
+    </div>
+
+    <div *ngIf="selectedOption === 'dinheiro'">
       <mat-form-field>
-        <mat-label>Troco para?</mat-label>
+        <mat-label>Forma de pagamento:</mat-label>
         <input matInput [(ngModel)]="troco" name="troco">
+
       </mat-form-field>
-    </p>
-    
+    </div>
   </form>
 </mat-dialog-content>
-  
+
 <mat-dialog-actions class="btn-dialog">
-  <button mat-raised-button [mat-dialog-close]="true" (click)="concluirPedido()">
+  <button class="bg-verde-ervilha" mat-raised-button [mat-dialog-close]="true" (click)="concluirPedido()">
     <mat-icon class="color-pink dialog-icon">shopping_cart</mat-icon>
     <span>Concluir</span>
   </button>
 
-  <button mat-raised-button mat-dialog-close>
+  <button class="bg-verde-ervilha" mat-raised-button mat-dialog-close>
     <mat-icon class="color-pink dialog-icon">cancel</mat-icon>
     <span class="span-icon">Fechar</span>
   </button>

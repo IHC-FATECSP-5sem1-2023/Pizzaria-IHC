@@ -22,12 +22,6 @@
   height: 40px;
 }
 
-.pizza-header-image, .bebida-header-image {
-  background-image: url('../../../../assets/card/cardapio.svg');
-  background-size: 85%;
-  background-repeat: no-repeat;
-}
-
 .img-bebida, .img-pizza {
   display: flex;
   justify-content: center;
