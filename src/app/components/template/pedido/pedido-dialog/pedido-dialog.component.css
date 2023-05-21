@@ -21,11 +21,7 @@ tr.mat-footer-row {
 .btn-dialog {
   display: flex;
   justify-content: flex-end;
-  color: #333;
-}
-
-.btn-dialog button {
-  background-color: #ffff8c;
+  color: #fff;
 }
 
 .excluir {

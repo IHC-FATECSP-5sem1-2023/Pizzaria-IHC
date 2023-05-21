@@ -13,6 +13,7 @@ export class PedidoFormComponent implements OnInit {
   rua: string = '';
   bairro: string = '';
   complemento: string = '';
+  selectedOption: string = '';
   troco: string = '';
 
   constructor(private pedidoService: PedidoService) { }
@@ -24,7 +25,7 @@ export class PedidoFormComponent implements OnInit {
     let texto = `*Nome:* ${this.nome};\n*Bairro:* ${this.bairro};\n*Rua:* ${this.rua};\n*Número:* ${this.numero};\n*Complemento:* ${this.complemento};\n*Troco para:* ${this.troco}\n\n`;
     let textoURI = encodeURIComponent(texto);
 
-    window.open(`https://api.whatsapp.com/send?phone=5585996455918&text=${textoURI}${this.pedidoService.pedidoURI}`);
-    
+    window.open(`https://api.whatsapp.com/send?phone=5511980268418&text=${textoURI}${this.pedidoService.pedidoURI}`);
+
   }
 }

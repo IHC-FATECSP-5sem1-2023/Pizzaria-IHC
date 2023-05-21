@@ -1,14 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { 
-  margin: 0; 
+body {
+  margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  
+}
+
+.bg-page{
+	background-image: url(./assets/img/fundo.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .mat-form-field.mat-focused .mat-form-field-ripple {
-  background-color: #ff033c;
+  background-color: #444801e6;
 }
 
 .color-white {
@@ -19,24 +24,44 @@ body {
   color: #333;
 }
 
-.color-pink{
-  color: #ff033c;
+.color-orange {
+  color: #ff8800;
 }
 
-.bg-pink {
-  background: #ff033c;
+.bg-verde-ervilha {
+  background-color: #807e2ae6;
 }
 
-.bg-yellow {
-  background: #ffff8c;
+.bg-verde-azeitona {
+  background-color: #444801e6;
+}
+
+.color-massa {
+  color: #eadac0;
+}
+
+.color-massa-dark {
+  color: #ae7a47;
+}
+
+.color-tomate {
+  color: #c32105;
+}
+
+.bg-massa {
+  background:#eadac0;
+}
+
+.bg-massa-dark {
+  background: #ae7a47;
 }
 
 .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
-  background-color: #ff033c;
+  background-color: #fff;
 }
 
 .mat-progress-spinner circle, .mat-spinner circle {
-  stroke: #ff033c;
+  stroke: #c32105;
 }
 
 .txt-center{

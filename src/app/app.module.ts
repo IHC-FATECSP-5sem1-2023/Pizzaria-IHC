@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/template/header/header.component';
 import { ContentComponent } from './components/template/content/content.component';
-import { FooterComponent } from './components/template/footer/footer.component'; 
+import { FooterComponent } from './components/template/footer/footer.component';
 import { PedidoComponent } from './components/template/pedido/pedido.component';
 
 import { FlexLayoutModule } from "@angular/flex-layout";
@@ -18,12 +18,13 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button'; 
+import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
+import {MatRadioModule} from '@angular/material/radio';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
@@ -57,7 +58,7 @@ registerLocaleData(localePt);
     MatCardModule,
     FlexLayoutModule,
     MatButtonModule,
-    MatBadgeModule, 
+    MatBadgeModule,
     MatDialogModule,
     MatButtonToggleModule,
     ScrollingModule,
@@ -67,7 +68,8 @@ registerLocaleData(localePt);
     FormsModule,
     HttpClientModule,
     MatProgressSpinnerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatRadioModule
   ],
   providers: [{
       provide: LOCALE_ID,

@@ -3,11 +3,11 @@ mat-form-field {
 }
 
 mat-label {
-	color: #ff033c;
+	color: #ae7a47;
 }
 
 .mat-form-field-subscript-wrapper{
-	background-color: #ff033c;
+	background-color: #ae7a47;
 }
 
 .numero {
@@ -21,11 +21,7 @@ mat-label {
 .btn-dialog {
   display: flex;
   justify-content: flex-end;
-  color: #333;
-}
-
-.btn-dialog button {
-  background-color: #ffff8c;
+  color: #fff;
 }
 
 /*.dialog-icon {
