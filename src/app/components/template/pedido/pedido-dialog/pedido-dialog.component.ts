@@ -20,7 +20,7 @@ export class PedidoDialogComponent implements OnInit {
   displayedColumns: string[] = ['item', 'price', 'action'];
 
   getTotalPrice() {
-    return this.transactions.map(t => t.price).reduce((acc, value) => acc + value, 0);
+    return this.transactions.map(t => t.price).reduce((acc, value) => acc + value, 0) + 5;
   }
 
   openPedidoForm(): void{
