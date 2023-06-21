@@ -24,6 +24,18 @@ mat-label {
   color: #fff;
 }
 
+.mat-radio-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #ae7a47
+}
+
+.mat-radio-button {
+  flex-grow: 1;
+  margin-right: 8px;
+}
+
 /*.dialog-icon {
   padding-bottom: 3px;
 }*/

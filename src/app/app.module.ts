@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
-import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,6 +24,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
@@ -34,7 +34,7 @@ import { PedidoDialogComponent } from './components/template/pedido/pedido-dialo
 
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
-import { PedidoFormComponent } from './components/template/pedido/pedido-form/pedido-form.component'
+import { PedidoFormComponent } from './components/template/pedido/pedido-form/pedido-form.component';
 
 registerLocaleData(localePt);
 
@@ -63,13 +63,14 @@ registerLocaleData(localePt);
     MatButtonToggleModule,
     ScrollingModule,
     MatTableModule,
+    FormsModule,
     MatInputModule,
     MatFormFieldModule,
-    FormsModule,
     HttpClientModule,
     MatProgressSpinnerModule,
     MatSnackBarModule,
-    MatRadioModule
+    MatRadioModule,
+    MatSelectModule
   ],
   providers: [{
       provide: LOCALE_ID,

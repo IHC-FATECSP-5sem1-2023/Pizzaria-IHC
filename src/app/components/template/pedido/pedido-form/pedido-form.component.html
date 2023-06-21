@@ -4,55 +4,86 @@
     <p>
       <mat-form-field>
         <mat-label>Nome</mat-label>
-        <input matInput [(ngModel)]="nome" name="nome">
+        <input matInput [(ngModel)]="nome" name="nome" placeholder="Nome">
       </mat-form-field>
     </p>
     <p>
       <mat-form-field>
         <mat-label>Bairro</mat-label>
-        <input matInput [(ngModel)]="bairro" name="bairro">
+        <input matInput [(ngModel)]="bairro" name="bairro" placeholder="Bom Retiro">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+        <mat-label>CEP</mat-label>
+        <input matInput [(ngModel)]="cep" name="cep" (input)="formatarCep($event)" maxlength="9" placeholder="01101-010">
       </mat-form-field>
     </p>
     <p>
       <mat-form-field>
         <mat-label>Rua</mat-label>
-        <input matInput [(ngModel)]="rua" name="rua">
+        <input matInput [(ngModel)]="rua" name="rua" placeholder="Av. Tiradentes">
       </mat-form-field>
     </p>
 
     <p>
       <mat-form-field class="numero">
         <mat-label>Número</mat-label>
-        <input matInput [(ngModel)]="numero" name="numero">
+        <input matInput [(ngModel)]="numero" name="numero" placeholder="615">
       </mat-form-field>
 
       <mat-form-field class="complemento">
         <mat-label>Complemento</mat-label>
-        <input matInput [(ngModel)]="complemento" name="complemento">
+        <input matInput [(ngModel)]="complemento" name="complemento" placeholder="A">
       </mat-form-field>
     </p>
 
-    <mat-radio-group [(ngModel)]="selectedOption">
-      <mat-radio-button value="option1">Opção 1</mat-radio-button>
-      <mat-radio-button value="option2">Opção 2</mat-radio-button>
+    <p>
+      <mat-form-field>
+        <mat-label>Obeservações</mat-label>
+        <textarea matInput placeholder="Ex: sem cebola" [(ngModel)]="observacoes" name="observacoes"></textarea>
+      </mat-form-field>
+
+    </p>
+
+    <mat-radio-group style="margin-bottom: 1em;" name="selectedOption" [(ngModel)]="selectedOption">
+      <mat-radio-button value="dinheiro">Dinheiro</mat-radio-button>
+      <mat-radio-button value="pix">Pix</mat-radio-button>
+      <mat-radio-button value="cartao">Cartão de Crédito</mat-radio-button>
     </mat-radio-group>
 
-    <div *ngIf="selectedOption === 'option1'">
-      <p>Conteúdo da Opção 1</p>
-    </div>
-
+    <!-- Opção para PIX -->
     <div *ngIf="selectedOption === 'dinheiro'">
       <mat-form-field>
-        <mat-label>Forma de pagamento:</mat-label>
-        <input matInput [(ngModel)]="troco" name="troco">
+        <mat-label>Troco</mat-label>
+        <input matInput [(ngModel)]="qtdTroco" name="qtdTroco">
+      </mat-form-field>
+    </div>
 
+    <!-- Opção para PIX -->
+    <div *ngIf="selectedOption === 'pix'">
+      <mat-form-field>
+        <mat-label>Chave PIX: 1234567890</mat-label>
+        <input matInput [disabled]="true"/>
+      </mat-form-field>
+    </div>
+
+    <!-- Opção para cartão de crédito -->
+    <div *ngIf="selectedOption === 'cartao'">
+      <mat-form-field>
+        <mat-label>Bandeira do cartão:</mat-label>
+        <mat-select [(ngModel)]="bandeiraCartao" name="bandeiraCartao">
+          <mat-option *ngFor="let bandeiras of bandeiras" [value]="bandeiras.value">
+            {{bandeiras.viewValue}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
     </div>
   </form>
 </mat-dialog-content>
 
 <mat-dialog-actions class="btn-dialog">
-  <button class="bg-verde-ervilha" mat-raised-button [mat-dialog-close]="true" (click)="concluirPedido()">
+  <button class="bg-verde-ervilha" mat-raised-button [mat-dialog-close]="true" (click)="tipoPagamento()">
     <mat-icon class="color-pink dialog-icon">shopping_cart</mat-icon>
     <span>Concluir</span>
   </button>
