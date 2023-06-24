@@ -26,14 +26,20 @@
   display: flex;
   justify-content: center;
   margin-top: 10px;
-  padding-top: 15px;
+  padding: 15px;
 }
 
 .redes p {
-  padding: 10px;
+  font-size: 1.2rem;
+  color: #fff;
 }
 
-.redes a > i {
-  font-size: 1.8rem;
+.menuNav {
+  margin-left: 1.5rem;
+}
+
+.menuNav a {
+  text-decoration: none;
   color: #fff;
+  font-size: 1.2rem;
 }

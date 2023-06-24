@@ -42,6 +42,12 @@ export class PedidoFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  gerarNumeroAleatorio(): number {
+    const min = 10000; // Menor número de 5 dígitos
+    const max = 99999; // Maior número de 5 dígitos
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
   formatarCep(event: any) {
     let value = event.target.value;
     value = value.replace(/\D/g, '');
@@ -50,7 +56,7 @@ export class PedidoFormComponent implements OnInit {
   }
 
   tipoPagamento():void {
-    this.textoPedido = `*Nome:* ${this.nome}\n*Bairro:* ${this.bairro}\n*CEP:* ${this.cep}\n*Rua:* ${this.rua}\n*Número:* ${this.numero}\n*Complemento:* ${this.complemento}\n*Observações:* ${this.observacoes}`;
+    this.textoPedido = `\n*Nome:* ${this.nome}\n*Bairro:* ${this.bairro}\n*CEP:* ${this.cep}\n*Rua:* ${this.rua}\n*Número:* ${this.numero}\n*Complemento:* ${this.complemento}\n*Observações:* ${this.observacoes}`;
 
     if (this.selectedOption === "dinheiro") {
        this.textoPedido += `\n*Troco:* ${this.qtdTroco}\n\n`;
@@ -64,8 +70,9 @@ export class PedidoFormComponent implements OnInit {
   }
 
   concluirPedido(): void {
-    window.alert(this.textoPedido)
+    const numeroAleatorio = this.gerarNumeroAleatorio();
+    let numeroPedidoText = `*Número Pedido:* `+numeroAleatorio;
     let textoURI = encodeURIComponent(this.textoPedido);
-    window.open(`https://api.whatsapp.com/send?phone=5511980268418&text=${textoURI}${this.pedidoService.pedidoURI}`);
+    window.open(`https://api.whatsapp.com/send?phone=5511980268418&text=${numeroPedidoText}${textoURI}${this.pedidoService.pedidoURI}`);
   }
 }
