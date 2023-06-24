@@ -35,6 +35,8 @@ import { PedidoDialogComponent } from './components/template/pedido/pedido-dialo
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { PedidoFormComponent } from './components/template/pedido/pedido-form/pedido-form.component';
+import { LoginComponent } from './components/template/login/login.component';
+import { HomeComponent } from './components/template/home/home.component';
 
 registerLocaleData(localePt);
 
@@ -47,6 +49,8 @@ registerLocaleData(localePt);
     PedidoComponent,
     PedidoDialogComponent,
     PedidoFormComponent,
+    LoginComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
